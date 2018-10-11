@@ -1,0 +1,36 @@
+{% extends 'index.html'%}
+
+{% block main%}
+<table id="tab">
+    <tbody>
+
+    <tr>
+        <td>user_id</td>
+        <td>user_name</td>
+        <td>user_password</td>
+        <td>isManger?</td>
+
+    </tr>
+    {% for user in users%}
+    <tr>
+
+        <td>{{user._id.toString()}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td>{%if user.manger%}是{%else%}否{%endif%}</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+    let tds = document.getElementsByTagName('td');
+    for(let i = 4; i < tds.length; i++) {
+        tds[i].setAttribute('contenteditable', true)
+    }
+
+</script>
+
+{%include 'page.html' %}
+{%endblock%}

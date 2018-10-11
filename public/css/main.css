@@ -1,0 +1,193 @@
+body{
+    margin: 0;
+    background: #ebebeb;
+}
+nav .menu{
+    position: relative;
+    background-color: white;
+    text-align: center;
+    height: 56px;
+
+    border-top: 1px solid #ebebeb;
+    border-bottom: 2px solid #e1e1e1;
+}
+nav .menu a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+nav .menu a:hover{
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+}
+nav .menu a.focus{
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+}
+.mainLeft {
+    position: relative;
+    margin-left: 150px;
+    width: 50%;
+
+}
+.mainLeft .mainLeftBox{
+    height: 200px;
+    margin-bottom:30px;
+    /*background-color:papayawhip;*/
+    background-color:white;
+}
+.mainLeft h1{
+
+    text-align: center;
+}
+.mainLeftP{
+    text-align: center;
+    color: #515151;
+}
+.mainLeft span{
+    color: #46b9d8;
+}
+.mainLeft pre{
+    font-size: 16px;
+}
+.showAll{
+    margin: 5px 0;
+}
+.showAll a{
+   display: inline-block;
+    background-color:lightskyblue;
+    width: 120px;
+    font-size: 25px;
+    margin: 8px 15px;
+    text-decoration: none;
+}
+ .pager{
+    /*background-color: papayawhip;*/
+    background-color: white;
+    display: inline-block;
+    margin-bottom: 30px;
+    height: 60px;
+     width: 680px;
+}
+.pager ul li{
+    display: inline-block;
+    padding: 8px 64px;
+}
+.pager ul li a{
+    text-decoration: none;
+}
+
+.mainRight{
+    position: relative;
+    float: right;
+    width: 30%;
+    height: 800px;
+    margin-top: -800px;
+    /*background-color: #46b9d8;*/
+    margin-right: 50px;
+}
+.rightBox{
+    position: relative;
+    height: 200px;
+    margin-bottom:30px;
+    /*background-color:papayawhip;*/
+    background-color:white;
+}
+.loginBox{
+    position: relative;
+    height: 250px;
+    margin-bottom:30px;
+    /*background-color:papayawhip;*/
+    background-color:white;
+}
+.registerBox{
+    position: relative;
+    height: 300px;
+    margin-bottom:30px;
+    /*background-color:papayawhip;*/
+    background-color:white;
+}
+.rightBox .title{
+    border-bottom: 1px solid #ebebeb;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.rightBox .title p {
+    display: inline-block;
+    margin-bottom: -1px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #e67e22;
+    padding: 0 20px 0 8px;
+}
+.rightBox p{
+    padding: 0 20px 0 8px;
+}
+.rightBox .message{
+    text-decoration: none;
+    color: coral;
+}
+.rightBox a{
+    text-decoration: none;
+}
+.loginBox .text ,.loginBox .password{
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.loginBox input{
+    height: 25px;
+    width: 200px;
+    margin-right: 30px;
+}
+
+label{
+    display: inline-block;
+    min-width: 100px;/*或者 width: 100px;*/
+}
+.mainRight .button{
+    margin-left: 150px;
+
+}
+.mainRight button {
+    background-color: #e67e22;
+    height:40px;
+    width: 210px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: white;
+    font-size: 12px;
+}
+.mainRight .button span{
+    text-align: center;
+
+    padding: 20px 60px;
+}
+.table{
+    display: inline-block;
+    margin-left: 50px;
+}
+.table td{
+
+}
+.table input{
+    height: 25px;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+.foot{
+    width: auto;
+    height: 60px;
+    background-color:#515151;
+    position:relative;
+    bottom:0;
+
+}
+
+.foot p{
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 24px;
+}
