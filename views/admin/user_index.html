@@ -1,6 +1,7 @@
 {% extends 'index.html'%}
 
 {% block main%}
+
 <table id="tab">
     <tbody>
 
@@ -9,7 +10,7 @@
         <td>user_name</td>
         <td>user_password</td>
         <td>isManger?</td>
-
+        <td>Delete/Update</td>
     </tr>
     {% for user in users%}
     <tr>
@@ -18,18 +19,47 @@
         <td>{{user.username}}</td>
         <td>{{user.password}}</td>
         <td>{%if user.manger%}是{%else%}否{%endif%}</td>
+        <td><a class="delete" href="javascript:;">删除</a>/<a class="update">修改</a></td>
     </tr>
+    <div id="showMessage" style="display: none">
+        <div>
+            <span>确认要删除吗？</span>
+        </div>
+
+        <div class="allButton">
+            <button><a href="/admin/user/delete?id={{user._id.toString()}}"></a>确认</button>
+            <button>取消</button>
+        </div>
+
+    </div>
+
     {%endfor%}
     </tbody>
 </table>
 
-
 <script type="text/javascript">
-    let tds = document.getElementsByTagName('td');
-    for(let i = 4; i < tds.length; i++) {
-        tds[i].setAttribute('contenteditable', true)
-    }
 
+    let tds = document.getElementsByTagName('td');
+    for(let i = 4; i < tds.length-1; i++) {
+        tds[i].setAttribute('contenteditable', true);
+    }
+    let deleteSpan = document.getElementsByClassName("delete");
+    let updateSpan = document.getElementsByClassName("update");
+    let showDiv = document.getElementById("showMessage");
+
+    let allButton = document.getElementsByTagName('button');
+    for(let i = 0; i < deleteSpan.length; i++){
+        deleteSpan[i].onclick = function () {
+           showDiv.style.display = 'block';
+           allButton[0].onclick=function () {
+               showDiv.style.display = 'none';
+           };
+           allButton[1].onclick=function () {
+               showDiv.style.display = 'none';
+           }
+
+        }
+    }
 </script>
 
 {%include 'page.html' %}

@@ -42,6 +42,7 @@ app.use( function(req, res, next) {
 //加载body-Parser,处理post请求
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
+
 //配应用模板
 //定义当前应用所使用的模板引擎
 // 第一个参数是模板引擎的名称，同时也是模板文件的后缀

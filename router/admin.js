@@ -13,8 +13,7 @@ router.get('/',function (req,res,next) {
 
 });
 //用户管理
-//
-
+//展示用户数据信息
 router.get('/user',function (req,res,next) {
 
 //从数据库中读取数据
@@ -22,9 +21,9 @@ router.get('/user',function (req,res,next) {
     let page = req.query.page || 1; //获得页数
     let skip = (page-1)*limit;//忽略了多少条，控制每一页的输出信息准确
     let pages  = 0;
-    console.log('页数'+page);
+    // console.log('页数'+page);
 
-    console.log('忽略的条数'+skip);
+    // console.log('忽略的条数'+skip);
     User.count().then(function (count) {
         console.log('总条数' + count);
         pages = Math.ceil(count/limit);
@@ -33,7 +32,7 @@ router.get('/user',function (req,res,next) {
         page = Math.min(page,pages); //取值不能超过最大值
         page = Math.max(1,page);//取值不能小于1
         User.find().limit(limit).skip(skip).then(function(users){
-            // console.log(users); //读取用户记录吧，将用户记录传递给模板
+            // console.log(users); //读取用户记录，将用户记录传递给模板
             res.render('admin/user_index',{
                 userInfo:req.userInfo,
                 users:users,
@@ -49,4 +48,30 @@ router.get('/user',function (req,res,next) {
 
 });
 
+//删除用户信息
+router.get('/user/delete',function (req,res) {
+    //获取要删除的分类id
+    let id = req.query.id||'';
+    User.remove({
+        _id: id
+    }).then(function() {
+        res.render('admin/main_index', {
+            userInfo: req.userInfo,
+        });
+    });
+
+});
+
+router.get('/classify',function (req,res,next) {
+    res.render('admin/classify_index',{
+        username:req.userInfo
+    });
+
+});
+
+router.get('/showClassifies',function(res,req,next){
+    res.render('admin/showClassifies',{
+        username:req.userInfo
+    })
+});
 module.exports = router;

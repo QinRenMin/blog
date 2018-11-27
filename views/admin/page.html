@@ -1,5 +1,11 @@
-<div>
-    <a href='/admin/user?page={{page-1}}'>上一页</a>
-    <span>一共{{pages}}页 当前第{{page}}页 每页显示{{limit}}条数据 一共{{count}}条</span>
-    <a href="/admin/user?page={{page+1}}">下一页</a>
+<div id="showList">
+    <div>
+        <a href='/admin/user?page={{1}}'>首页</a>
+        <a href='/admin/user?page={{page-1}}'>上一页</a>
+        <a href="/admin/user?page={{page+1}}">下一页</a>
+        <a href="/admin/user?page={{pages}}">尾页</a>
+    </div>
+    <div>
+        <p>一共{{pages}}页 当前第{{page}}页 每页显示{{limit}}条数据 一共{{count}}条</p>
+    </div>
 </div>
