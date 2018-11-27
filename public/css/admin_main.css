@@ -59,10 +59,10 @@ tr:nth-child(even){
  tr:hover{
     background-color: #46b9d8;
 }
- #tab tr a{
+ #tab tr span{
      color: blue;
  }
- #tab tr a:hover{
+ #tab tr span:hover{
      cursor: pointer;
      text-decoration: none;
  }

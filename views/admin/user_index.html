@@ -19,7 +19,7 @@
         <td>{{user.username}}</td>
         <td>{{user.password}}</td>
         <td>{%if user.manger%}是{%else%}否{%endif%}</td>
-        <td><a class="delete" href="javascript:;">删除</a>/<a class="update">修改</a></td>
+        <td><span class="delete">删除</span>/<span class="update">修改</span></td>
     </tr>
     <div id="showMessage" style="display: none">
         <div>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="allButton">
-            <button><a href="/admin/user/delete?id={{user._id.toString()}}"></a>确认</button>
+            <a href="/admin/user/delete?id={{user._id.toString()}}"><button>确认</button></a>
             <button>取消</button>
         </div>
 

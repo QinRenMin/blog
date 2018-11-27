@@ -25,9 +25,9 @@ router.get('/user',function (req,res,next) {
 
     // console.log('忽略的条数'+skip);
     User.count().then(function (count) {
-        console.log('总条数' + count);
+        // console.log('总条数' + count);
         pages = Math.ceil(count/limit);
-        console.log('总页数'+pages);
+        // console.log('总页数'+pages);
         //设置page的取值范围
         page = Math.min(page,pages); //取值不能超过最大值
         page = Math.max(1,page);//取值不能小于1
@@ -55,9 +55,9 @@ router.get('/user/delete',function (req,res) {
     User.remove({
         _id: id
     }).then(function() {
-        res.render('admin/main_index', {
-            userInfo: req.userInfo,
-        });
+       res.render('admin/success',{
+           userInfo:req.userInfo
+       });
     });
 
 });
